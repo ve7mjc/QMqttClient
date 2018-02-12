@@ -17,14 +17,14 @@ QMqttClient::QMqttClient()
     // which may be overridden post-constructor
     _name = _uuid;
 
-    connect(this, SIGNAL(connected()),
-                     this, SLOT(on_connected()));
+//    connect(this, SIGNAL(connected()),
+//                     this, SLOT(on_connected()));
 
-    connect(this, SIGNAL(disconnected()),
-                     this, SLOT(on_disconnected()));
+//    connect(this, SIGNAL(disconnected()),
+//                     this, SLOT(on_disconnected()));
 
-    connect(this, SIGNAL(received(QMQTT::Message)),
-                     this, SLOT(on_messageReceived(QMQTT::Message)));
+//    connect(this, SIGNAL(received(QMQTT::Message)),
+//                     this, SLOT(on_messageReceived(QMQTT::Message)));
 
     // decent defaults (tm)
     setHost("172.23.0.17");
@@ -67,7 +67,7 @@ void QMqttClient::publish(QString topic, QString message, QosLevel qos, bool ret
 //
 void QMqttClient::setHost(const char *host)
 {
-    QMQTT::Client::setHost(QHostAddress(host));
+    QMQTT::Client::setHost(QHostAddress(QString(host)).toString());
 }
 
 void QMqttClient::on_disconnected()

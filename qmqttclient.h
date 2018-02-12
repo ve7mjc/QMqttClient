@@ -1,8 +1,9 @@
 #ifndef QMQTTCLIENT_H
 #define QMQTTCLIENT_H
 
-#include "qmqtt.h"
+#include "qmqtt\qmqtt.h"
 #include <QLoggingCategory>
+#include <QHostAddress>
 #include <QUuid>
 
 enum QosLevel {
